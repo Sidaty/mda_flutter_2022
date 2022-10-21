@@ -1,5 +1,24 @@
 
 void main() {
+  final numberList = [
+    1, 2, 3, 4, 5
+  ];
+
+  final numberList2 = [];
+  for(int i = 0; i < numberList.length; i++) {
+    int number = numberList[i];
+    int number2 = number * 2;
+    numberList2.add(number2);
+  }
+
+  final numberList3 = numberList.map((number) => number * 2).toList();
+
+  print(numberList);
+  print(numberList2);
+  print(numberList3);
+}
+
+test1() {
   Person person1 = const Person(address: "ACI 2000", name: "Diallo");
   Person person11 = const Person(address: "ACI 2000", name: "Diallo");
   Person person12 = const Person(address: "ACI 2000", name: "Diallo");
