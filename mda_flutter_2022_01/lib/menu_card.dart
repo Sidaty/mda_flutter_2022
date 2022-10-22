@@ -4,9 +4,11 @@ import 'package:mda_flutter_2022_01/model.dart';
 class MenuCard extends StatelessWidget {
   final MenuData menuData;
   final bool inDetailPage;
+  final void Function(MenuData) addItem;
 
   const MenuCard(
-    this.menuData, {
+    this.menuData,
+    this.addItem, {
     this.inDetailPage = false,
     Key? key,
   }) : super(key: key);
@@ -101,8 +103,9 @@ class MenuCard extends StatelessWidget {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      shape: const StadiumBorder(),
-                      primary: Colors.deepOrangeAccent),
+                    shape: const StadiumBorder(),
+                    primary: Colors.deepOrangeAccent,
+                  ),
                   child: const Text(
                     "Ajouter au panier",
                     style: TextStyle(
@@ -111,7 +114,7 @@ class MenuCard extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () => addItem(menuData),
                 ),
               ],
             ),

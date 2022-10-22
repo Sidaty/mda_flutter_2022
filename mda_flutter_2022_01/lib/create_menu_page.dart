@@ -37,11 +37,12 @@ class _CreateMenuPageState extends State<CreateMenuPage> {
     final price = int.parse(priceController.text);
 
     final menuData = MenuData(
-        title: title,
-        description: description,
-        price: price,
-        mainImage: mainImage!,
-        secondaryImage: secondaryImage!,
+      id: DateTime.now().microsecond,
+      title: title,
+      description: description,
+      price: price,
+      mainImage: mainImage!,
+      secondaryImage: secondaryImage!,
     );
     print("$title, $description, $price, $mainImage, $secondaryImage");
 
